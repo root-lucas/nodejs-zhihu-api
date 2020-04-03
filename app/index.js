@@ -6,10 +6,14 @@
 const Koa = require('koa')
 const app = new Koa()
 const bodyparser = require('koa-bodyparser')
-const routing = require('./routes')
 const error = require('koa-json-error')
 const parameter = require('koa-parameter')
+const mongoose = require('mongoose')
+const routing = require('./routes')
+const { mongooseConnectStr } = require('./config')
 
+mongoose.connect(mongooseConnectStr, { useUnifiedTopology: true, useNewUrlParser: true }, () => console.log('MongoDB 连接成功!'))
+mongoose.connection.on('error', console.error)
 
 const env = process.env.NODE_ENV
 app.use(error({
