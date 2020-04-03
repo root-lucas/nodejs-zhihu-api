@@ -1,21 +1,25 @@
 {
-  "name": "nodejs-zhihu-api",
-  "version": "1.0.0",
-  "description": "防知乎RESTful API",
-  "main": "index.js",
-  "scripts": {
-    "start": "nodemon app/index.js"
-  },
-  "author": "lucas",
-  "license": "ISC",
-  "dependencies": {
-    "eslint": "^6.8.0",
-    "koa": "^2.11.0",
-    "koa-bodyparser": "^4.3.0",
-    "koa-router": "^8.0.8"
-  },
-  "devDependencies": {
-    "babel-eslint": "^10.1.0",
-    "nodemon": "^2.0.2"
-  }
+    "name": "nodejs-zhihu-api",
+    "version": "1.0.0",
+    "description": "防知乎RESTful API",
+    "main": "index.js",
+    "scripts": {
+        "dev": "cross-env NODE_ENV=dev nodemon app/index.js",
+        "prd": "cross-env NODE_ENV=production nodemon app/index.js"
+    },
+    "author": "lucas",
+    "license": "ISC",
+    "dependencies": {
+        "koa": "^2.11.0",
+        "koa-bodyparser": "^4.3.0",
+        "koa-json-error": "^3.1.2",
+        "koa-parameter": "^3.0.1",
+        "koa-router": "^8.0.8"
+    },
+    "devDependencies": {
+        "babel-eslint": "^10.1.0",
+        "cross-env": "^7.0.2",
+        "eslint": "^6.8.0",
+        "nodemon": "^2.0.2"
+    }
 }
