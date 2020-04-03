@@ -1,0 +1,21 @@
+{
+  "name": "nodejs-zhihu-api",
+  "version": "1.0.0",
+  "description": "防知乎RESTful API",
+  "main": "index.js",
+  "scripts": {
+    "start": "nodemon app/index.js"
+  },
+  "author": "lucas",
+  "license": "ISC",
+  "dependencies": {
+    "eslint": "^6.8.0",
+    "koa": "^2.11.0",
+    "koa-bodyparser": "^4.3.0",
+    "koa-router": "^8.0.8"
+  },
+  "devDependencies": {
+    "babel-eslint": "^10.1.0",
+    "nodemon": "^2.0.2"
+  }
+}
