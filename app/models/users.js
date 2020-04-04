@@ -5,7 +5,8 @@ const { Schema, model } = mongoose
 const userSchema = new Schema({
     __v: { type: Number, select: false },
     name: { type: String, required: true },
-    password: { type: String, required: true, select: false } // 密码不返回给客户端
+    // select默认为 true, false 表示字段不返回给客户端
+    password: { type: String, required: true, select: true }
 })
 
 module.exports = model('User', userSchema)

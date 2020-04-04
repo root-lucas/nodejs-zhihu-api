@@ -5,15 +5,19 @@
 
 const Koa = require('koa')
 const app = new Koa()
-const bodyparser = require('koa-bodyparser')
+const koaBody = require('koa-body')
+const koaStatic = require('koa-static')
 const error = require('koa-json-error')
 const parameter = require('koa-parameter')
 const mongoose = require('mongoose')
+const path = require('path')
 const routing = require('./routes')
 const { mongooseConnectStr } = require('./config')
 
 mongoose.connect(mongooseConnectStr, { useUnifiedTopology: true, useNewUrlParser: true, useFindAndModify: false }, () => console.log('MongoDB 连接成功!'))
 mongoose.connection.on('error', console.error)
+
+app.use(koaStatic(path.join(__dirname, 'public')))
 
 const env = process.env.NODE_ENV
 app.use(error({
@@ -22,7 +26,13 @@ app.use(error({
 }))
 
 
-app.use(bodyparser())
+app.use(koaBody({
+    multipart: true,  // 支持文件上传
+    formidable: {
+        uploadDir: path.join(__dirname, '/public/uploads'),
+        keepExtensions: true   // 保留原来的文件后缀
+    }
+}))
 app.use(parameter(app))
 routing(app)
 
