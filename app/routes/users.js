@@ -4,7 +4,7 @@
  */
 
 const router = require('koa-router')()
-const jsonwebtoken = require('jsonwebtoken')
+const jwt = require('koa-jwt')
 
 router.prefix('/users')
 
@@ -14,19 +14,9 @@ const {
 } = require('../controllers/users')
 const { secret } = require('../config')
 
-// 手写认证中间件
-const auth = async (ctx, next) => {
-    const { authorization = '' } = ctx.request.header // header 会把所有头改为小写
-    // const token = authorization.split(' ')[1]
-    const token = authorization.replace('Bearer ', '') // 注意空格
-    try {
-        const user = jsonwebtoken.verify(token, secret)
-        ctx.state.user = user
-    } catch (err) {
-        ctx.throw(401, err.message)
-    }
-    await next()
-}
+// 第三方认证中间件
+const auth = jwt({ secret })
+
 
 // 获取用户列表
 router.get('/', find)
