@@ -28,6 +28,11 @@ class UsersCtl {
         const user = await new User(ctx.request.body).save()
         ctx.body = user
     }
+    // 用户授权中间件
+    async checkOwner(ctx, next) {
+        if (ctx.params.id !== ctx.state.user._id) { ctx.throw(403, '没有权限') }
+        await next()
+    }
     async update(ctx) {
         // 校验数据
         ctx.verifyParams({
