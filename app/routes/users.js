@@ -10,7 +10,9 @@ router.prefix('/users')
 
 const {
     find, findById, create, update,
-    delete: del, login, checkOwner
+    delete: del, login, checkOwner,
+    listFollowing, follow, unFollow,
+    listFollowers, checkUserExist
 } = require('../controllers/users')
 const { secret } = require('../config')
 
@@ -30,5 +32,13 @@ router.patch('/:id', auth, checkOwner, update)
 router.delete('/:id', auth, checkOwner, del)
 // 登陆用户
 router.post('/login', login)
+// 获取某个用户的关注人列表
+router.get('/:id/following', listFollowing)
+// 获取某个用户的粉丝列表
+router.get('/:id/followers', listFollowers)
+// 关注某个用户
+router.put('/follow/:id', auth, checkUserExist, follow)
+// 取消关注
+router.delete('/unFollow/:id', auth, checkUserExist, unFollow)
 
 module.exports = router
