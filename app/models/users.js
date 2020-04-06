@@ -20,17 +20,20 @@ const userSchema = new Schema({
     },
     educations: {
         type: [{
-            school: { type: Schema.Types.ObjectId, ref: 'Topic'  },
-            major: { type: Schema.Types.ObjectId, ref: 'Topic'  },
+            school: { type: Schema.Types.ObjectId, ref: 'Topic' },
+            major: { type: Schema.Types.ObjectId, ref: 'Topic' },
             diploma: { type: Number, enum: [1, 2, 3, 4, 5] },
             entrance_year: { type: Number },
             graduation_year: { type: Number }
         }],
         select: false
-
     },
     following: {
         type: [{ type: Schema.Types.ObjectId, ref: 'User' }],
+        select: false
+    },
+    followingTopics: {
+        type: [{ type: Schema.Types.ObjectId, ref: 'Topic' }],
         select: false
     }
 })

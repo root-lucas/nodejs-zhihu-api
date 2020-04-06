@@ -4,6 +4,7 @@
  */
 
 const Topic = require('../models/topic')
+const User = require('../models/users')
 
 class TopicsCtl {
     async find(ctx) {
@@ -37,6 +38,15 @@ class TopicsCtl {
         })
         const topic = await Topic.findByIdAndUpdate(ctx.params.id, ctx.request.body)
         ctx.body = topic    // 返回话题更新前的信息
+    }
+    async listFollowers(ctx) {
+        const users = await User.find({ followingTopics: ctx.params.id })
+        ctx.body = users
+    }
+    async checkTopicExist(ctx, next) {
+        const topic = await Topic.findById(ctx.params.id)
+        if (!topic) { ctx.throw(404, '话题不存在') }
+        await next()
     }
 }
 

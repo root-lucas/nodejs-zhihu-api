@@ -12,9 +12,11 @@ const {
     find, findById, create, update,
     delete: del, login, checkOwner,
     listFollowing, follow, unFollow,
-    listFollowers, checkUserExist
+    listFollowers, checkUserExist,
+    followTopic, unFollowTopic, listFollowingTopics
 } = require('../controllers/users')
 const { secret } = require('../config')
+const { checkTopicExist } = require('../controllers/topic')
 
 // 第三方认证中间件
 const auth = jwt({ secret })
@@ -40,5 +42,11 @@ router.get('/:id/followers', listFollowers)
 router.put('/follow/:id', auth, checkUserExist, follow)
 // 取消关注
 router.delete('/unFollow/:id', auth, checkUserExist, unFollow)
+// 获取某个用户的关注话题列表
+router.get('/:id/followingTopics', listFollowingTopics)
+// 用户关注话题
+router.put('/followingTopics/:id', auth, checkTopicExist, followTopic)
+// 用户取消关注话题
+router.delete('/followingTopics/:id', auth, checkTopicExist, unFollowTopic)
 
 module.exports = router
