@@ -13,7 +13,8 @@ const {
     delete: del, login, checkOwner,
     listFollowing, follow, unFollow,
     listFollowers, checkUserExist,
-    followTopic, unFollowTopic, listFollowingTopics
+    followTopic, unFollowTopic, listFollowingTopics,
+    listQuestions
 } = require('../controllers/users')
 const { secret } = require('../config')
 const { checkTopicExist } = require('../controllers/topic')
@@ -48,5 +49,7 @@ router.get('/:id/followingTopics', listFollowingTopics)
 router.put('/followingTopics/:id', auth, checkTopicExist, followTopic)
 // 用户取消关注话题
 router.delete('/followingTopics/:id', auth, checkTopicExist, unFollowTopic)
+// 用户的问题列表
+router.get('/:id/questions', listQuestions)
 
 module.exports = router
