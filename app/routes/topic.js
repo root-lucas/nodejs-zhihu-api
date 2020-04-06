@@ -9,7 +9,8 @@ const jwt = require('koa-jwt')
 router.prefix('/topics')
 
 const {
-    find, findById, create, update, checkTopicExist, listFollowers
+    find, findById, create, update, checkTopicExist,
+    listFollowers, listQuestions
 } = require('../controllers/topic')
 const { secret } = require('../config')
 
@@ -26,5 +27,7 @@ router.get('/:id', checkTopicExist, findById)
 router.patch('/:id', auth, checkTopicExist, update)
 // 话题的粉丝列表
 router.get('/:id/followers', checkTopicExist, listFollowers)
+// 获取某个话题的问题列表
+router.get('/:id/questions', checkTopicExist, listQuestions)
 
 module.exports = router
