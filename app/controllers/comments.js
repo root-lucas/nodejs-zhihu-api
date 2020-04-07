@@ -7,11 +7,12 @@ class CommentsCtl {
         const perPage = Math.max(per_page * 1, 1)
         const q = new RegExp(ctx.query.q)
         const { questionId, answerId } = ctx.params
+        // rootCommentId 是一级评论
         const { rootCommentId } = ctx.query
         ctx.body = await Comment
             .find({ content: q, questionId, answerId, rootCommentId })
             .limit(perPage).skip(page * perPage)
-            .populate('commentator')
+            .populate('commentator replyTo')
     }
     async checkCommentExist(ctx, next) {
         const comment = await Comment.findById(ctx.params.id).select('+commentator')
@@ -34,7 +35,8 @@ class CommentsCtl {
     async create(ctx) {
         ctx.verifyParams({
             content: { type: 'string', required: true },
-            rootCommentId: { type: 'string', required: false },
+            rootCommentId: { type: 'string', required: false }, // 新建二级评论
+            replyTo: { type: 'string', required: false },
         })
         const commentator = ctx.state.user._id
         const { questionId, answerId } = ctx.params
@@ -51,6 +53,7 @@ class CommentsCtl {
         ctx.verifyParams({
             content: { type: 'string', required: false },
         })
+        // 限制二级评论变成其他人的一级评论的可能（某一级评论下的二级评论不能再是其他人的一级评论）
         const { content } = ctx.request.body
         await ctx.state.comment.update({ content })
         ctx.body = ctx.state.comment
