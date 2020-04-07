@@ -14,10 +14,14 @@ const {
     listFollowing, follow, unFollow,
     listFollowers, checkUserExist,
     followTopic, unFollowTopic, listFollowingTopics,
-    listQuestions
+    listQuestions,
+    listLikingAnswers, likeAnswer, unlikeAnswer,
+    listDislikingAnswers, dislikeAnswer, undislikeAnswer,
+    listCollectingAnswers, collectAnswer, uncollectAnswer
 } = require('../controllers/users')
 const { secret } = require('../config')
 const { checkTopicExist } = require('../controllers/topic')
+const { checkAnswerExist } = require('../controllers/answers')
 
 // 第三方认证中间件
 const auth = jwt({ secret })
@@ -51,5 +55,24 @@ router.put('/followingTopics/:id', auth, checkTopicExist, followTopic)
 router.delete('/followingTopics/:id', auth, checkTopicExist, unFollowTopic)
 // 用户的问题列表
 router.get('/:id/questions', listQuestions)
+
+// 获取某个用户赞过的答案列表
+router.get('/:id/likingAnswers', listLikingAnswers)
+// 赞答案（增加 undislikeAnswer 实现与踩互斥）
+router.put('/likingAnswers/:id', auth, checkAnswerExist, likeAnswer, undislikeAnswer)
+// 取消赞答案
+router.delete('/likingAnswers/:id', auth, checkAnswerExist, unlikeAnswer)
+// 获取某个用户踩过的答案列表
+router.get('/:id/dislikingAnswers', listDislikingAnswers)
+// 踩答案 （互斥关系）
+router.put('/dislikingAnswers/:id', auth, checkAnswerExist, dislikeAnswer, unlikeAnswer)
+// 取消踩答案
+router.delete('/dislikingAnswers/:id', auth, checkAnswerExist, undislikeAnswer)
+// 获取某个用户收藏的答案列表
+router.get('/:id/collectingAnswers', listCollectingAnswers)
+// 收藏答案
+router.put('/collectingAnswers/:id', auth, checkAnswerExist, collectAnswer)
+// 取消收藏答案
+router.delete('/collectingAnswers/:id', auth, checkAnswerExist, uncollectAnswer)
 
 module.exports = router
