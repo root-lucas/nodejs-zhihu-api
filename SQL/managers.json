@@ -1,0 +1,9 @@
+{ 
+    "_id" : ObjectId("5efb8d8ce5950b1364c71bb3"), 
+    "userName" : "admin", 
+    "password" : "$2a$10$Vrnir1jB3ckywwB5miTyJu.w.Jzxv7E6MB9rFjlpfkoSShRGfn1aG", 
+    "nickName" : "超级管理员", 
+    "createdAt" : ISODate("2020-06-30T19:07:56.791+0000"), 
+    "updatedAt" : ISODate("2020-06-30T19:07:56.791+0000"), 
+    "__v" : NumberInt(0)
+}

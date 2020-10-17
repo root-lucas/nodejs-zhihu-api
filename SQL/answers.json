@@ -1,0 +1,47 @@
+{ 
+    "_id" : ObjectId("5e8b37a4183c9c15d4ffe6a6"), 
+    "content" : "MongoDB 是一个简单好用的数据库", 
+    "answerer" : ObjectId("5e87c7930b69c730c8af70cb"), 
+    "questionId" : "5e8b0cd4fad3c63f807c93ab", 
+    "__v" : NumberInt(0), 
+    "voteCount" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5e8c1d130b1a9910b4ed53c9"), 
+    "voteCount" : NumberInt(0), 
+    "content" : "node.js 使用koa2框架是后端很好用的哦", 
+    "answerer" : ObjectId("5e87c7930b69c730c8af70cb"), 
+    "questionId" : "5e8af53af1deb026404f235c", 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5e9477ecc8e1603ac09f12ae"), 
+    "content" : "华南理工大学确实不错!", 
+    "answerer" : ObjectId("5e8ec10583276137209e91c0"), 
+    "questionId" : "5e90a276674bd32050f3db74", 
+    "__v" : NumberInt(0), 
+    "voteCount" : NumberInt(-9)
+}
+{ 
+    "_id" : ObjectId("5e9491c082efd63d50a2c6e1"), 
+    "content" : "华南理工大学确实不错2!", 
+    "answerer" : ObjectId("5e8ec10583276137209e91c0"), 
+    "questionId" : "5e90a276674bd32050f3db74", 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5e995ffd34201512e4491de0"), 
+    "content" : "答案1：北京理工大学是个好大学", 
+    "answerer" : ObjectId("5e968fbad07a710ed4c2ecac"), 
+    "questionId" : "5e96e20760fffe389866bbb5", 
+    "__v" : NumberInt(0), 
+    "voteCount" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5e996fcee376372408c90600"), 
+    "voteCount" : NumberInt(0), 
+    "content" : "答案2：北京理工大学是个好大学", 
+    "answerer" : ObjectId("5e968fbad07a710ed4c2ecac"), 
+    "questionId" : "5e96e20760fffe389866bbb5", 
+    "__v" : NumberInt(0)
+}

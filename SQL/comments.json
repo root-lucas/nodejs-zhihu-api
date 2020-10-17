@@ -1,0 +1,156 @@
+{ 
+    "_id" : ObjectId("5e8c922bf07e87396cff7917"), 
+    "content" : "嗯，应该是的100", 
+    "replyTo" : ObjectId("5e87c7930b69c730c8af70cb"), 
+    "commentator" : ObjectId("5e87c7930b69c730c8af70cb"), 
+    "questionId" : "5e87c7930b69c730c8af70cb", 
+    "answerId" : "5e8b37a4183c9c15d4ffe6a6", 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5e8c9252f07e87396cff7918"), 
+    "content" : "嗯，应该是的100", 
+    "rootCommentId" : "5e8c915ef07e87396cff7916", 
+    "replyTo" : ObjectId("5e87c7930b69c730c8af70cb"), 
+    "commentator" : ObjectId("5e87c7930b69c730c8af70cb"), 
+    "questionId" : "5e87c7930b69c730c8af70cb", 
+    "answerId" : "5e8b37a4183c9c15d4ffe6a6", 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5e8c940af07e87396cff791a"), 
+    "content" : "嗯，应该是的100分", 
+    "rootCommentId" : "5e8c93dbf07e87396cff7919", 
+    "replyTo" : ObjectId("5e87c7930b69c730c8af70cb"), 
+    "commentator" : ObjectId("5e87c7930b69c730c8af70cb"), 
+    "questionId" : "5e87c7930b69c730c8af70cb", 
+    "answerId" : "5e8b37a4183c9c15d4ffe6a6", 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5e8c950df07e87396cff791b"), 
+    "content" : "嗯，应该是的100分", 
+    "rootCommentId" : "5e8c93dbf07e87396cff7919", 
+    "replyTo" : ObjectId("5e87c7930b69c730c8af70cb"), 
+    "commentator" : ObjectId("5e87c7930b69c730c8af70cb"), 
+    "questionId" : "5e8b0cd4fad3c63f807c93ab", 
+    "answerId" : "5e8b37a4183c9c15d4ffe6a6", 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5e8c9610f07e87396cff791c"), 
+    "content" : "嗯，应该是的100分1111", 
+    "rootCommentId" : "5e8c93dbf07e87396cff7919", 
+    "replyTo" : ObjectId("5e87c7930b69c730c8af70cb"), 
+    "commentator" : ObjectId("5e87c7930b69c730c8af70cb"), 
+    "questionId" : "5e8b0cd4fad3c63f807c93ab", 
+    "answerId" : "5e8b37a4183c9c15d4ffe6a6", 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5e8c9743f07e87396cff791d"), 
+    "content" : "你回答的太好啦, MongoDB 确实很好用的1", 
+    "commentator" : ObjectId("5e87c7930b69c730c8af70cb"), 
+    "questionId" : "5e8b0cd4fad3c63f807c93ab", 
+    "answerId" : "5e8b37a4183c9c15d4ffe6a6", 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5e8c9801f07e87396cff791e"), 
+    "content" : "嗯，应该是的100分11113", 
+    "rootCommentId" : "5e8c93dbf07e87396cff7919", 
+    "replyTo" : ObjectId("5e87c7930b69c730c8af70cb"), 
+    "commentator" : ObjectId("5e87c7930b69c730c8af70cb"), 
+    "questionId" : "5e8b0cd4fad3c63f807c93ab", 
+    "answerId" : "5e8b37a4183c9c15d4ffe6a6", 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5e8c98d264330c3bd83dd013"), 
+    "content" : "你回答的太好啦, MongoDB 确实很好用的2", 
+    "commentator" : ObjectId("5e87c7930b69c730c8af70cb"), 
+    "questionId" : "5e8b0cd4fad3c63f807c93ab", 
+    "answerId" : "5e8b37a4183c9c15d4ffe6a6", 
+    "createdAt" : ISODate("2020-04-07T15:14:26.507+0000"), 
+    "updatedAt" : ISODate("2020-04-07T15:14:26.507+0000"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5e8c991c4778093d280d1391"), 
+    "content" : "你回答的太好啦, MongoDB 确实很好用的3", 
+    "commentator" : ObjectId("5e87c7930b69c730c8af70cb"), 
+    "questionId" : "5e8b0cd4fad3c63f807c93ab", 
+    "answerId" : "5e8b37a4183c9c15d4ffe6a6", 
+    "createdAt" : ISODate("2020-04-07T15:15:40.229+0000"), 
+    "updatedAt" : ISODate("2020-04-07T15:15:40.229+0000"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5e958e2a2203623ad0c431fb"), 
+    "content" : "我是第一条评论", 
+    "commentator" : ObjectId("5e8ec10583276137209e91c0"), 
+    "questionId" : "5e90a276674bd32050f3db74", 
+    "answerId" : "5e9477ecc8e1603ac09f12ae", 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5e95984de31036382c41eacd"), 
+    "content" : "我是第二条评论", 
+    "commentator" : ObjectId("5e8ec10583276137209e91c0"), 
+    "questionId" : "5e90a276674bd32050f3db74", 
+    "answerId" : "5e9477ecc8e1603ac09f12ae", 
+    "createdAt" : ISODate("2020-04-14T11:02:37.755+0000"), 
+    "updatedAt" : ISODate("2020-04-14T11:02:37.755+0000"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5e9598c0e31036382c41eace"), 
+    "content" : "我是第一条二级评论", 
+    "rootCommentId" : "5e958e2a2203623ad0c431fb", 
+    "replyTo" : ObjectId("5e8ec10583276137209e91c0"), 
+    "commentator" : ObjectId("5e8ec10583276137209e91c0"), 
+    "questionId" : "5e90a276674bd32050f3db74", 
+    "answerId" : "5e9477ecc8e1603ac09f12ae", 
+    "createdAt" : ISODate("2020-04-14T11:04:32.964+0000"), 
+    "updatedAt" : ISODate("2020-04-14T11:04:32.964+0000"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5e9981ef6ca9be33e8927e98"), 
+    "content" : "我是一级评论1", 
+    "commentator" : ObjectId("5e968fbad07a710ed4c2ecac"), 
+    "questionId" : "5e986c10e51c5a24cc87a4c7", 
+    "answerId" : "5e995ffd34201512e4491de0", 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5e9987d62294d2111cdfae12"), 
+    "content" : "我是一级评论2", 
+    "commentator" : ObjectId("5e968fbad07a710ed4c2ecac"), 
+    "questionId" : "5e986c10e51c5a24cc87a4c7", 
+    "answerId" : "5e995ffd34201512e4491de0", 
+    "__v" : NumberInt(0), 
+    "updatedAt" : ISODate("2020-04-17T14:51:24.591+0000")
+}
+{ 
+    "_id" : ObjectId("5e99c0e9c317942ca007d75d"), 
+    "content" : "我是一级评论3", 
+    "commentator" : ObjectId("5e968fbad07a710ed4c2ecac"), 
+    "questionId" : "5e986c10e51c5a24cc87a4c7", 
+    "answerId" : "5e995ffd34201512e4491de0", 
+    "createdAt" : ISODate("2020-04-17T14:44:57.244+0000"), 
+    "updatedAt" : ISODate("2020-04-17T14:52:23.427+0000"), 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5e99c4f6aff98d2b3c3b202b"), 
+    "content" : "我是第一条二级评论", 
+    "rootCommentId" : "5e9981ef6ca9be33e8927e98", 
+    "replyTo" : ObjectId("5e968fbad07a710ed4c2ecac"), 
+    "commentator" : ObjectId("5e968fbad07a710ed4c2ecac"), 
+    "questionId" : "5e986c10e51c5a24cc87a4c7", 
+    "answerId" : "5e995ffd34201512e4491de0", 
+    "createdAt" : ISODate("2020-04-17T15:02:14.350+0000"), 
+    "updatedAt" : ISODate("2020-04-17T15:02:14.350+0000"), 
+    "__v" : NumberInt(0)
+}

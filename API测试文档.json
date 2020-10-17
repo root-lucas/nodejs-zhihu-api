@@ -1,0 +1,1665 @@
+{
+	"info": {
+		"_postman_id": "d3ac50d9-3b41-45ec-8c88-b6e4e612dbea",
+		"name": "zhihu_RESTful_API",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "获取用户列表",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"lucas311\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/users?page=1&per_page=10&q=lucas",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "1"
+						},
+						{
+							"key": "per_page",
+							"value": "10"
+						},
+						{
+							"key": "q",
+							"value": "lucas"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "获取特定用户",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/users/5e87c7930b69c730c8af70cb?fields=following;locations;employments;educations",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"5e87c7930b69c730c8af70cb"
+					],
+					"query": [
+						{
+							"key": "fields",
+							"value": "following;locations;employments;educations"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "新建用户",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"lucas11\",\n\t\"password\": \"123\"\n}\n",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "修改用户",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "bfed1c44-4af4-461e-9a2a-a12267a66e81",
+						"exec": [
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"avatar_url\": \"http://localhost:3000/uploads/upload_1cfd1f985d841755b450bbc3d4c4ba29.png\",\n\t\"gender\": \"male\",\n\t\"headline\": \"我是许景天\",\n\t\"locations\": [\"5e8a7b63ccace4233c45bda8\", \"5e8a7b68ccace4233c45bda9\"],\n\t\"business\": \"5e8a7b6dccace4233c45bdaa\",\n\t\"employments\": [{\"company\":\"5e89d736e0ef043d38a5fffe\", \"job\": \"5e89d740e0ef043d38a5ffff\"}],\n\t\"educations\": [{\"school\": \"5e89d74ce0ef043d38a60000\", \"major\": \"5e89d754e0ef043d38a60001\", \"diploma\": 3, \"entrance_year\": 2014, \"graduation_year\": 2018}]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/users/5e87c7930b69c730c8af70cb",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"5e87c7930b69c730c8af70cb"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "删除用户",
+			"request": {
+				"method": "DELETE",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/users/5e8734b0624e7a35dc87e541",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"5e8734b0624e7a35dc87e541"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "登陆",
+			"event": [
+				{
+					"listen": "test",
+					"script": {
+						"id": "9d1b4627-d5a2-4654-a657-a9bed6c5704f",
+						"exec": [
+							"var jsonData = pm.response.json();",
+							"pm.globals.set('token', jsonData.token);",
+							""
+						],
+						"type": "text/javascript"
+					}
+				}
+			],
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"lucas3\",\n\t\"password\": \"123\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/users/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "上传图片",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "file",
+							"type": "file",
+							"src": "/F:/代码/1000.png"
+						}
+					],
+					"options": {
+						"formdata": {}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/upload",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"upload"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "获取某个用户的关注人列表",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/users/5e87c7930b69c730c8af70cb/following",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"5e87c7930b69c730c8af70cb",
+						"following"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "获取某个用户的粉丝列表",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/users/5e87c693f009da2504aa6bda/followers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"5e87c693f009da2504aa6bda",
+						"followers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "关注某人",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/users/follow/5e87c693f009da2504aa6bda",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"follow",
+						"5e87c693f009da2504aa6bda"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "取消关注某人",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/users/unFollow/5e87c693f009da2504aa6bda",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"unFollow",
+						"5e87c693f009da2504aa6bda"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "获取话题列表",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/topics?per_page=10",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"topics"
+					],
+					"query": [
+						{
+							"key": "per_page",
+							"value": "10"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "获取特定话题",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/topics/5e89d736e0ef043d38a5fffe?fields=introduction",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"topics",
+						"5e89d736e0ef043d38a5fffe"
+					],
+					"query": [
+						{
+							"key": "fields",
+							"value": "introduction"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "新建话题",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"name\": \"互联网\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/topics/",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"topics",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "修改话题",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"avatar_url\": \"http://localhost:3000/uploads/upload_1cfd1f985d841755b450bbc3d4c4ba29.png\",\n\t\"introduction\": \"阿里巴巴是马云创建的一个电商购物网站\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/topics/5e89d736e0ef043d38a5fffe",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"topics",
+						"5e89d736e0ef043d38a5fffe"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "获取某个用户的关注话题列表",
+			"request": {
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/users/5e87c7930b69c730c8af70cb/followingTopics",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"5e87c7930b69c730c8af70cb",
+						"followingTopics"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "关注某话题",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/users/followingTopics/5e89d736e0ef043d38a5fffe",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"followingTopics",
+						"5e89d736e0ef043d38a5fffe"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "取消关注某话题",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/users/followingTopics/5e89d740e0ef043d38a5ffff",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"followingTopics",
+						"5e89d740e0ef043d38a5ffff"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "获取某个话题的粉丝列表",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/topics/5e89d736e0ef043d38a5fffe/followers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"topics",
+						"5e89d736e0ef043d38a5fffe",
+						"followers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "获取某个话题的问题列表",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/topics/5e89d740e0ef043d38a5ffff/questions",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"topics",
+						"5e89d740e0ef043d38a5ffff",
+						"questions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "获取问题列表",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/questions?per_page=10",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"questions"
+					],
+					"query": [
+						{
+							"key": "per_page",
+							"value": "10"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "获取特定问题",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/questions/5e8af500f1deb026404f235b",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"questions",
+						"5e8af500f1deb026404f235b"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "新建问题",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"title\": \"MongoDB 是什么?\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/questions",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"questions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "修改问题",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"topics\": [\"5e89d740e0ef043d38a5ffff\",\"5e89d754e0ef043d38a60001\"]\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/questions/5e8af53af1deb026404f235c",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"questions",
+						"5e8af53af1deb026404f235c"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "删除问题",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/questions/5e8b07570447e93b284bd796",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"questions",
+						"5e8b07570447e93b284bd796"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "用户的问题列表",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/users/5e87c7930b69c730c8af70cb/questions",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"5e87c7930b69c730c8af70cb",
+						"questions"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "获取答案列表",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/questions/5e8b0cd4fad3c63f807c93ab/answers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"questions",
+						"5e8b0cd4fad3c63f807c93ab",
+						"answers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "获取特定答案",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/questions/5e8b0cd4fad3c63f807c93ab/answers/5e8b37a4183c9c15d4ffe6a6",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"questions",
+						"5e8b0cd4fad3c63f807c93ab",
+						"answers",
+						"5e8b37a4183c9c15d4ffe6a6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "新建答案",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"content\": \"koa2是框架\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/questions/5e8af500f1deb026404f235b/answers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"questions",
+						"5e8af500f1deb026404f235b",
+						"answers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "修改答案",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"content\": \"MongoDB 是一个简单好用的数据库2\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/questions/5e8b0cd4fad3c63f807c93ab/answers/5e8b39ae183c9c15d4ffe6a7",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"questions",
+						"5e8b0cd4fad3c63f807c93ab",
+						"answers",
+						"5e8b39ae183c9c15d4ffe6a7"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "删除答案",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/questions/5e8b0cd4fad3c63f807c93ab/answers/5e8b39ae183c9c15d4ffe6a7",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"questions",
+						"5e8b0cd4fad3c63f807c93ab",
+						"answers",
+						"5e8b39ae183c9c15d4ffe6a7"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "获取某个用户赞过的答案列表",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/users/5e87c7930b69c730c8af70cb/likingAnswers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"5e87c7930b69c730c8af70cb",
+						"likingAnswers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "获取某个用户踩过的答案列表",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/users/5e87c7930b69c730c8af70cb/dislikingAnswers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"5e87c7930b69c730c8af70cb",
+						"dislikingAnswers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "赞答案",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/users/likingAnswers/5e8b37a4183c9c15d4ffe6a6",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"likingAnswers",
+						"5e8b37a4183c9c15d4ffe6a6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "踩答案",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/users/dislikingAnswers/5e8b37a4183c9c15d4ffe6a6",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"dislikingAnswers",
+						"5e8b37a4183c9c15d4ffe6a6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "取消赞答案",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/users/likingAnswers/5e8b37a4183c9c15d4ffe6a6",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"likingAnswers",
+						"5e8b37a4183c9c15d4ffe6a6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "取消踩答案",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/users/dislikingAnswers/5e8b37a4183c9c15d4ffe6a6",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"dislikingAnswers",
+						"5e8b37a4183c9c15d4ffe6a6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "获取某个用户收藏的答案列表",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/users/5e87c7930b69c730c8af70cb/collectingAnswers",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"5e87c7930b69c730c8af70cb",
+						"collectingAnswers"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "收藏答案",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/users/collectingAnswers/5e8b37a4183c9c15d4ffe6a6",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"collectingAnswers",
+						"5e8b37a4183c9c15d4ffe6a6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "取消收藏答案",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/users/collectingAnswers/5e8b37a4183c9c15d4ffe6a6",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"users",
+						"collectingAnswers",
+						"5e8b37a4183c9c15d4ffe6a6"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "获取某个答案的评论列表",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [],
+					"options": {
+						"urlencoded": {}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/questions/5e8b0cd4fad3c63f807c93ab/answers/5e8b37a4183c9c15d4ffe6a6/comments",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"questions",
+						"5e8b0cd4fad3c63f807c93ab",
+						"answers",
+						"5e8b37a4183c9c15d4ffe6a6",
+						"comments"
+					],
+					"query": [
+						{
+							"key": "rootCommentId",
+							"value": "5e8c93dbf07e87396cff7919",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "获取某个答案的特定评论",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/questions/5e87c7930b69c730c8af70cb/answers/5e8b37a4183c9c15d4ffe6a6/comments/5e8c76be046b7524f8736f6a",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"questions",
+						"5e87c7930b69c730c8af70cb",
+						"answers",
+						"5e8b37a4183c9c15d4ffe6a6",
+						"comments",
+						"5e8c76be046b7524f8736f6a"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "新建评论",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"content\": \"你回答的太好啦, MongoDB 确实很好用的3\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/questions/5e8b0cd4fad3c63f807c93ab/answers/5e8b37a4183c9c15d4ffe6a6/comments",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"questions",
+						"5e8b0cd4fad3c63f807c93ab",
+						"answers",
+						"5e8b37a4183c9c15d4ffe6a6",
+						"comments"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "修改评论",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PATCH",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"content\": \"你回答的太好啦, MongoDB 确实很好用2\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/questions/5e87c7930b69c730c8af70cb/answers/5e8b37a4183c9c15d4ffe6a6/comments/5e8c76be046b7524f8736f6a",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"questions",
+						"5e87c7930b69c730c8af70cb",
+						"answers",
+						"5e8b37a4183c9c15d4ffe6a6",
+						"comments",
+						"5e8c76be046b7524f8736f6a"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "删除评论",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "DELETE",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/questions/5e8b0cd4fad3c63f807c93ab/answers/5e8b37a4183c9c15d4ffe6a6/comments/5e8c93dbf07e87396cff7919",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"questions",
+						"5e8b0cd4fad3c63f807c93ab",
+						"answers",
+						"5e8b37a4183c9c15d4ffe6a6",
+						"comments",
+						"5e8c93dbf07e87396cff7919"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "获取二级评论列表",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [],
+				"body": {
+					"mode": "urlencoded",
+					"urlencoded": [],
+					"options": {
+						"urlencoded": {}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/questions/5e8b0cd4fad3c63f807c93ab/answers/5e8b37a4183c9c15d4ffe6a6/comments?rootCommentId=5e8c93dbf07e87396cff7919",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"questions",
+						"5e8b0cd4fad3c63f807c93ab",
+						"answers",
+						"5e8b37a4183c9c15d4ffe6a6",
+						"comments"
+					],
+					"query": [
+						{
+							"key": "rootCommentId",
+							"value": "5e8c93dbf07e87396cff7919"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "新建二级评论",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "{{token}}",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n\t\"content\": \"嗯，应该是的100分11113\",\n\t\"rootCommentId\": \"5e8c93dbf07e87396cff7919\",\n\t\"replyTo\": \"5e87c7930b69c730c8af70cb\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/questions/5e8b0cd4fad3c63f807c93ab/answers/5e8b37a4183c9c15d4ffe6a6/comments",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"questions",
+						"5e8b0cd4fad3c63f807c93ab",
+						"answers",
+						"5e8b37a4183c9c15d4ffe6a6",
+						"comments"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}

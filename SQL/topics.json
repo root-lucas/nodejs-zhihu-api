@@ -1,0 +1,52 @@
+{ 
+    "_id" : ObjectId("5e89d736e0ef043d38a5fffe"), 
+    "name" : "阿里巴巴", 
+    "__v" : NumberInt(0), 
+    "avatar_url" : "http://localhost:3000/uploads/upload_1cfd1f985d841755b450bbc3d4c4ba29.png", 
+    "introduction" : "阿里巴巴是马云创建的一个电商购物网站"
+}
+{ 
+    "_id" : ObjectId("5e89d740e0ef043d38a5ffff"), 
+    "name" : "前端专家", 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5e89d74ce0ef043d38a60000"), 
+    "name" : "清华大学", 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5e89d754e0ef043d38a60001"), 
+    "name" : "计算机科学", 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5e8a7b63ccace4233c45bda8"), 
+    "name" : "杭州", 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5e8a7b68ccace4233c45bda9"), 
+    "name" : "北京", 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5e8a7b6dccace4233c45bdaa"), 
+    "name" : "互联网", 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5e8fd2b6ad0fa72ccc871fd0"), 
+    "name" : "华南理工大学", 
+    "introduction" : "广东重点大学", 
+    "__v" : NumberInt(0), 
+    "topicsUser" : [
+
+    ]
+}
+{ 
+    "_id" : ObjectId("5e96e20760fffe389866bbb5"), 
+    "name" : "北京理工大学", 
+    "introduction" : "位于北京市", 
+    "__v" : NumberInt(0)
+}

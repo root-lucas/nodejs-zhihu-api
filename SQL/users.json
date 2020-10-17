@@ -1,0 +1,230 @@
+{ 
+    "_id" : ObjectId("5e87c7930b69c730c8af70cb"), 
+    "name" : "lucas3", 
+    "password" : "123", 
+    "__v" : NumberInt(0), 
+    "avatar_url" : "http://localhost:3000/uploads/upload_1cfd1f985d841755b450bbc3d4c4ba29.png", 
+    "business" : ObjectId("5e8a7b6dccace4233c45bdaa"), 
+    "educations" : [
+        {
+            "_id" : ObjectId("5f2c36dab0434754d8e00d8f"), 
+            "school" : ObjectId("5e89d74ce0ef043d38a60000"), 
+            "major" : ObjectId("5e89d754e0ef043d38a60001"), 
+            "diploma" : NumberInt(3), 
+            "entrance_year" : NumberInt(2014), 
+            "graduation_year" : NumberInt(2018)
+        }
+    ], 
+    "employments" : [
+        {
+            "_id" : ObjectId("5f2c36dab0434754d8e00d8e"), 
+            "company" : ObjectId("5e89d736e0ef043d38a5fffe"), 
+            "job" : ObjectId("5e89d740e0ef043d38a5ffff")
+        }
+    ], 
+    "gender" : "male", 
+    "headline" : "我是许景天", 
+    "locations" : [
+        ObjectId("5e8a7b63ccace4233c45bda8"), 
+        ObjectId("5e8a7b68ccace4233c45bda9")
+    ], 
+    "following" : [
+        ObjectId("5e87c693f009da2504aa6bdf"), 
+        ObjectId("5e87c693f009da2504aa6bdb"), 
+        ObjectId("5e87c693f009da2504aa6bda")
+    ], 
+    "followingTopics" : [
+        ObjectId("5e89d736e0ef043d38a5fffe")
+    ], 
+    "likingAnswers" : [
+
+    ], 
+    "dislikingAnswers" : [
+
+    ], 
+    "collectingAnswers" : [
+
+    ], 
+    "updatedAt" : ISODate("2020-08-06T16:59:06.881+0000")
+}
+{ 
+    "_id" : ObjectId("5e87cae094d34532fc7b0134"), 
+    "name" : "lucas4", 
+    "password" : "123", 
+    "__v" : NumberInt(0), 
+    "followingTopics" : [
+        ObjectId("5e89d736e0ef043d38a5fffe")
+    ], 
+    "gender" : "male"
+}
+{ 
+    "_id" : ObjectId("5e89e32113e62c0a5c0cff15"), 
+    "gender" : "male", 
+    "locations" : [
+
+    ], 
+    "following" : [
+
+    ], 
+    "name" : "lucas5", 
+    "password" : "123", 
+    "employments" : [
+
+    ], 
+    "educations" : [
+
+    ], 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5e89e32813e62c0a5c0cff16"), 
+    "gender" : "male", 
+    "locations" : [
+
+    ], 
+    "following" : [
+
+    ], 
+    "name" : "lucas6", 
+    "password" : "123", 
+    "employments" : [
+
+    ], 
+    "educations" : [
+
+    ], 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5e8ec10583276137209e91c0"), 
+    "name" : "test1", 
+    "password" : "123", 
+    "__v" : NumberInt(0), 
+    "avatar_url" : "http://localhost:3000/uploads/upload_1cfd1f985d841755b450bbc3d4c4ba29.png", 
+    "business" : ObjectId("5e8a7b6dccace4233c45bdaa"), 
+    "educations" : [
+        {
+            "_id" : ObjectId("5e8fe19b6c25b2376cee4106"), 
+            "school" : ObjectId("5e8fd2b6ad0fa72ccc871fd0"), 
+            "major" : ObjectId("5e89d754e0ef043d38a60001"), 
+            "diploma" : NumberInt(3), 
+            "entrance_year" : NumberInt(2014), 
+            "graduation_year" : NumberInt(2018)
+        }
+    ], 
+    "employments" : [
+        {
+            "_id" : ObjectId("5e8fe19b6c25b2376cee4105"), 
+            "company" : ObjectId("5e89d736e0ef043d38a5fffe"), 
+            "job" : ObjectId("5e89d740e0ef043d38a5ffff")
+        }
+    ], 
+    "gender" : "male", 
+    "headline" : "我是许景天2", 
+    "locations" : [
+        ObjectId("5e8a7b63ccace4233c45bda8"), 
+        ObjectId("5e8a7b68ccace4233c45bda9")
+    ], 
+    "following" : [
+        ObjectId("5e8f244440e9b00af8ff0b68")
+    ], 
+    "followingTopics" : [
+        ObjectId("5e8fd2b6ad0fa72ccc871fd0")
+    ], 
+    "likingAnswers" : [
+
+    ], 
+    "dislikingAnswers" : [
+        ObjectId("5e9477ecc8e1603ac09f12ae")
+    ], 
+    "collectingAnswers" : [
+
+    ]
+}
+{ 
+    "_id" : ObjectId("5e8f244440e9b00af8ff0b68"), 
+    "gender" : "male", 
+    "locations" : [
+
+    ], 
+    "following" : [
+
+    ], 
+    "name" : "test2", 
+    "password" : "123", 
+    "employments" : [
+
+    ], 
+    "educations" : [
+
+    ], 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5e968fbad07a710ed4c2ecac"), 
+    "name" : "测试账号1", 
+    "password" : "123", 
+    "__v" : NumberInt(0), 
+    "avatar_url" : "http://localhost:3000/uploads/xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx.png", 
+    "business" : ObjectId("5e8a7b6dccace4233c45bdaa"), 
+    "educations" : [
+        {
+            "_id" : ObjectId("5e970d7bdc491f35148bdccb"), 
+            "school" : ObjectId("5e96e20760fffe389866bbb5"), 
+            "major" : ObjectId("5e89d754e0ef043d38a60001"), 
+            "diploma" : NumberInt(3), 
+            "entrance_year" : NumberInt(2014), 
+            "graduation_year" : NumberInt(2018)
+        }
+    ], 
+    "employments" : [
+        {
+            "_id" : ObjectId("5e970d7bdc491f35148bdcca"), 
+            "company" : ObjectId("5e89d736e0ef043d38a5fffe"), 
+            "job" : ObjectId("5e89d740e0ef043d38a5ffff")
+        }
+    ], 
+    "gender" : "male", 
+    "headline" : "我是lucas", 
+    "locations" : [
+        ObjectId("5e8a7b68ccace4233c45bda9"), 
+        ObjectId("5e8a7b63ccace4233c45bda8")
+    ], 
+    "following" : [
+        ObjectId("5e96a3b87a3def3010f215c0")
+    ], 
+    "followingTopics" : [
+        ObjectId("5e96e20760fffe389866bbb5")
+    ], 
+    "likingAnswers" : [
+
+    ], 
+    "dislikingAnswers" : [
+
+    ], 
+    "collectingAnswers" : [
+
+    ]
+}
+{ 
+    "_id" : ObjectId("5e96a3b87a3def3010f215c0"), 
+    "gender" : "male", 
+    "locations" : [
+
+    ], 
+    "name" : "测试账号2", 
+    "password" : "123", 
+    "employments" : [
+
+    ], 
+    "educations" : [
+
+    ], 
+    "__v" : NumberInt(0)
+}
+{ 
+    "_id" : ObjectId("5f8aff332473000045000a72"), 
+    "name" : "lucas101", 
+    "__v" : NumberInt(0), 
+    "password" : "123"
+}
